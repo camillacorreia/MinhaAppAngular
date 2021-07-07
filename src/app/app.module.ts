@@ -14,9 +14,10 @@ import { TextMaskModule } from 'angular2-text-mask';
 
 import { AppComponent } from './app.component';
 import { SobreComponent } from './institucional/sobre/sobre.component';
-import { rootRouterConfig } from './app.routes';
 import { CadastroComponent } from './demos/reactiveForms/cadastro/cadastro.component';
 import { NavegacaoModule } from './navegacao/navegacao.module';
+
+import { AppRoutingModule } from './app.routes';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { NavegacaoModule } from './navegacao/navegacao.module';
     TextMaskModule,
     NgBrazil,
     NavegacaoModule,
-    [RouterModule.forRoot(rootRouterConfig, { useHash: false })]
+    AppRoutingModule
   ],
   providers: [
     {provide: APP_BASE_HREF, useValue: '/'}
