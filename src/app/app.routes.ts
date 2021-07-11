@@ -7,6 +7,7 @@ import { ContatoComponent } from './institucional/contato/contato.component';
 import { SobreComponent } from './institucional/sobre/sobre.component';
 import { NgModule } from '@angular/core';
 import { CadastroGuard } from './services/cadastro.guard';
+import { FilmesComponent } from './demos/pipes/filmes.component';
 
 export const rootRouterConfig: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -14,6 +15,7 @@ export const rootRouterConfig: Routes = [
     { path: 'contato', component: ContatoComponent },
     { path: 'sobre', component: SobreComponent },
     { path: 'cadastro', component: CadastroComponent, canDeactivate: [CadastroGuard]},
+    { path: 'filmes', component: FilmesComponent },
     { path: 'produtos',
         loadChildren: () => import('./demos/arquitetura-components/produto.module')
         .then(m => m.ProdutoModule)

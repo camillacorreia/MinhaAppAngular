@@ -26,6 +26,12 @@ export class MenuComponent {
       admin: false
     },
     {
+      link: '/filmes',
+      name: 'Filmes',
+      exact: true,
+      admin: false
+    },
+    {
       link: '/produtos',
       name: 'Produtos',
       exact: true,
