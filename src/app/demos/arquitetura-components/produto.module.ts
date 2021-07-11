@@ -9,6 +9,7 @@ import { ProdutoDetalheComponent } from './components/produto-card-detalhe.compo
 import { ProdutoCountComponent } from './components/produto-count.component';
 import { EditarProdutoComponent } from './editar-produto/editar-produto.component';
 import { ProdutoService } from '../services/produto.service';
+import { ProdutosResolve } from '../services/produto.resolve';
 registerLocaleData(localePt)
 
 @NgModule({
@@ -24,7 +25,8 @@ registerLocaleData(localePt)
     ProdutoRoutingModule
   ],
   providers: [
-    ProdutoService
+    ProdutoService,
+    ProdutosResolve
   ],
   exports: [ ]
 })
