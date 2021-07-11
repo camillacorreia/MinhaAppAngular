@@ -24,6 +24,7 @@ import { FilmesComponent } from './demos/pipes/filmes.component';
 import { FileSizePipe } from './demos/pipes/filesize.pipe';
 import { ImageFormaterPipe } from './demos/pipes/image.pipe';
 import { BarModule } from './demos/bar-di-zones/bar.module';
+import { TodoComponent } from './demos/todo-list/todo.component';
 
 export const BAR_PROVIDERS: Provider[] = [
   BarServices
@@ -37,7 +38,8 @@ export const BAR_PROVIDERS: Provider[] = [
     FilmesComponent,
     BarComponent,
     FileSizePipe,
-    ImageFormaterPipe
+    ImageFormaterPipe,
+    TodoComponent
   ],
   imports: [
     BrowserModule,
