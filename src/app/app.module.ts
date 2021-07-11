@@ -1,5 +1,7 @@
+import { BarServices } from './demos/bar-di-zones/bar.service';
+import { BarComponent } from './demos/bar-di-zones/bar.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Provider } from '@angular/core';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -21,6 +23,11 @@ import { CadastroGuard } from './services/cadastro.guard';
 import { FilmesComponent } from './demos/pipes/filmes.component';
 import { FileSizePipe } from './demos/pipes/filesize.pipe';
 import { ImageFormaterPipe } from './demos/pipes/image.pipe';
+import { BarModule } from './demos/bar-di-zones/bar.module';
+
+export const BAR_PROVIDERS: Provider[] = [
+  BarServices
+];
 
 @NgModule({
   declarations: [
@@ -28,6 +35,7 @@ import { ImageFormaterPipe } from './demos/pipes/image.pipe';
     SobreComponent,
     CadastroComponent,
     FilmesComponent,
+    BarComponent,
     FileSizePipe,
     ImageFormaterPipe
   ],
@@ -39,11 +47,16 @@ import { ImageFormaterPipe } from './demos/pipes/image.pipe';
     TextMaskModule,
     NgBrazil,
     NavegacaoModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BarModule.forRoot({
+      unidadeId: 1000,
+      unidadeToken: 'eca9836'
+    })
   ],
   providers: [
     AuthGuard,
-    CadastroGuard
+    CadastroGuard,
+    // BAR_PROVIDERS
   ],
   bootstrap: [AppComponent]
 })

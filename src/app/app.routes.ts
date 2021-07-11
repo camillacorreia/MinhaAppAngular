@@ -8,6 +8,7 @@ import { SobreComponent } from './institucional/sobre/sobre.component';
 import { NgModule } from '@angular/core';
 import { CadastroGuard } from './services/cadastro.guard';
 import { FilmesComponent } from './demos/pipes/filmes.component';
+import { BarComponent } from './demos/bar-di-zones/bar.component';
 
 export const rootRouterConfig: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -16,6 +17,7 @@ export const rootRouterConfig: Routes = [
     { path: 'sobre', component: SobreComponent },
     { path: 'cadastro', component: CadastroComponent, canDeactivate: [CadastroGuard]},
     { path: 'filmes', component: FilmesComponent },
+    { path: 'bar', component: BarComponent },
     { path: 'produtos',
         loadChildren: () => import('./demos/arquitetura-components/produto.module')
         .then(m => m.ProdutoModule)
