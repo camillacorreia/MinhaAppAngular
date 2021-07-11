@@ -1,9 +1,16 @@
+import { ProdutoAppComponent } from './produto.app.component';
+import { EditarProdutoComponent } from './editar-produto/editar-produto.component';
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { ProdutoDashboardComponent } from './produto-dashboard/produto-dashboard.component';
 
 export const produtoRouterConfig: Routes = [
-  { path: '', component: ProdutoDashboardComponent }
+  { path: '', component: ProdutoAppComponent,
+    children: [
+      { path: '', component: ProdutoDashboardComponent },
+      { path: 'editar/:id', component: EditarProdutoComponent }
+    ]
+  },
 ];
 
 @NgModule({

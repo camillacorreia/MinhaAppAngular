@@ -35,9 +35,7 @@ import { AppRoutingModule } from './app.routes';
     NavegacaoModule,
     AppRoutingModule
   ],
-  providers: [
-    { provide: APP_BASE_HREF, useValue: '/' }
-  ],
+  providers: [ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
