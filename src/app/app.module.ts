@@ -25,6 +25,7 @@ import { FileSizePipe } from './demos/pipes/filesize.pipe';
 import { ImageFormaterPipe } from './demos/pipes/image.pipe';
 import { BarModule } from './demos/bar-di-zones/bar.module';
 import { TodoComponent } from './demos/todo-list/todo.component';
+import { TodoModule } from './demos/todo-list/todo.module';
 
 export const BAR_PROVIDERS: Provider[] = [
   BarServices
@@ -38,8 +39,7 @@ export const BAR_PROVIDERS: Provider[] = [
     FilmesComponent,
     BarComponent,
     FileSizePipe,
-    ImageFormaterPipe,
-    TodoComponent
+    ImageFormaterPipe
   ],
   imports: [
     BrowserModule,
@@ -53,7 +53,8 @@ export const BAR_PROVIDERS: Provider[] = [
     BarModule.forRoot({
       unidadeId: 1000,
       unidadeToken: 'eca9836'
-    })
+    }),
+    TodoModule
   ],
   providers: [
     AuthGuard,
