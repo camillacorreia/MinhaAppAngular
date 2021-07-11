@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TasksService } from '../../todo.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'tasks-finalizadas',
@@ -6,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TasksFinalizadasComponent implements OnInit {
 
-  constructor() {}
+  finalizados$: Observable<any[]>
 
-  ngOnInit() { } 
+  constructor(private taskService: TasksService) {}
+
+  ngOnInit() {
+    this.finalizados$ = this.taskService.getToDoList$;
+  }
 }
