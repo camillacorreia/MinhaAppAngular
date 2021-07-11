@@ -1,3 +1,4 @@
+import { AuthGuard } from './services/app.guard';
 import { NotFoundComponent } from './navegacao/not-found/not-found.component';
 import { CadastroComponent } from './demos/reactiveForms/cadastro/cadastro.component';
 import { Routes, RouterModule } from '@angular/router';
@@ -15,6 +16,12 @@ export const rootRouterConfig: Routes = [
     { path: 'produtos',
         loadChildren: () => import('./demos/arquitetura-components/produto.module')
         .then(m => m.ProdutoModule)
+    },
+    { path: 'admin',
+        loadChildren: () => import('./admin/admin.module')
+        .then(m => m.AdminModule),
+        canLoad: [AuthGuard],
+        canActivate: [AuthGuard]
     },
     { path: '**', component: NotFoundComponent }
 ];
